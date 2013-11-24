@@ -13,6 +13,7 @@ public class TestMarshaller extends TestCase {
 		ApplicationContextMarshaller<StringResult> marshaller = new StringApplicationContextMarshaller();
 		
 		marshaller.addBean(new TestClassUnit());
+		marshaller.addBean(new TestBean());
 		marshaller.marshal(result);
 		
 		System.out.println(result.getXml());
