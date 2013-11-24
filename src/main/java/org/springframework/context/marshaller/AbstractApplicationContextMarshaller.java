@@ -25,7 +25,9 @@ public abstract class AbstractApplicationContextMarshaller<R extends Result> imp
 	}
 
 	public void addBean(Object obj) {
-		beans.add(obj);
+		if (obj != null) {
+			beans.add(obj);
+		}
 	}
 	
 	public List<Object> getBeans() {
