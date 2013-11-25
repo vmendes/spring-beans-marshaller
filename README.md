@@ -25,5 +25,7 @@ Generates the bean definition entries from runtime state of Java objects to Spri
 		String context = result.getString();
 
 
-Does not contain any dependency to Spring Framework, so that you can generate namespace correctly by:
+It does not contain any dependency to Spring Framework, so that you can generate namespace correctly by:
+
 		SpringBeansMarshaller.setSpringVersion("3.1");
+		
