@@ -5,21 +5,21 @@ import java.util.List;
 
 import javax.xml.transform.Result;
 
-import org.springframework.context.marshaller.runtime.BeanDefinitionRuntimeReader;
-import org.springframework.context.marshaller.runtime.GenericBeanDefinitionRuntimeReader;
+import org.springframework.context.marshaller.runtime.BeanRuntimeReader;
+import org.springframework.context.marshaller.runtime.SchemaBeanRuntimeReader;
 
 public abstract class AbstractApplicationContextMarshaller<R extends Result> implements
 		ApplicationContextMarshaller<R> {
 
 	private List<Object> beans = new ArrayList<Object>();
 	
-	private BeanDefinitionRuntimeReader beanReader;
+	private BeanRuntimeReader beanReader;
 	
 	public AbstractApplicationContextMarshaller() {
-		this(new GenericBeanDefinitionRuntimeReader());
+		this(new SchemaBeanRuntimeReader());
 	}
 
-	public AbstractApplicationContextMarshaller(BeanDefinitionRuntimeReader beanReader) {
+	public AbstractApplicationContextMarshaller(BeanRuntimeReader beanReader) {
 		super();
 		this.beanReader = beanReader;
 	}
@@ -34,11 +34,11 @@ public abstract class AbstractApplicationContextMarshaller<R extends Result> imp
 		return beans;
 	}
 	
-	public BeanDefinitionRuntimeReader getBeanReader() {
+	public BeanRuntimeReader getBeanReader() {
 		return beanReader;
 	}
 
-	public void setBeanReader(BeanDefinitionRuntimeReader beanReader) {
+	public void setBeanReader(BeanRuntimeReader beanReader) {
 		this.beanReader = beanReader;
 	}
 

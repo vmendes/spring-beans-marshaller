@@ -27,11 +27,12 @@ public class TestMarshaller extends TestCase {
 		bean.setTestList(Collections.singletonList("list1"));
 		bean.setTestLong(688L);
 		bean.setTestMap(Collections.singletonMap("Key1", "Value1"));
-		//bean.setTestObject(bean);
+		bean.setTestObject(new TestBean());
 		bean.setTestSet(Collections.singleton("set1"));
 		bean.setTestShort((short)77);
 		bean.setTestString("String1");
 		System.out.println(marshalBean(bean));
+		
 	}
 	
 	private String marshalBean(TestBean bean) throws Exception {

@@ -8,11 +8,6 @@ public class StringResultMarshallingException extends RuntimeException {
 		super();
 	}
 
-	public StringResultMarshallingException(String message, Throwable cause,
-			boolean enableSuppression, boolean writableStackTrace) {
-		super(message, cause, enableSuppression, writableStackTrace);
-	}
-
 	public StringResultMarshallingException(String message, Throwable cause) {
 		super(message, cause);
 	}
