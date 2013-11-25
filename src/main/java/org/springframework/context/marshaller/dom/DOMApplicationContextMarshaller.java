@@ -25,7 +25,8 @@ public class DOMApplicationContextMarshaller extends
 
 	private static final String COMMON_LOCATION = "xsi:schemaLocation";
 
-	private static final String BEANS_LOCATION = "http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd";
+	private static final String BEANS_LOCATION = "http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-"
+			+ SPRING_VERSION + ".xsd";
 
 	@Override
 	protected void doMarshal(DOMResult result) {

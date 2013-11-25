@@ -15,6 +15,8 @@ public abstract class AbstractApplicationContextMarshaller<R extends Result> imp
 	
 	private BeanRuntimeReader beanReader;
 	
+	protected static String SPRING_VERSION = "3.1";
+	
 	public AbstractApplicationContextMarshaller() {
 		this(new SchemaBeanRuntimeReader());
 	}
@@ -47,6 +49,8 @@ public abstract class AbstractApplicationContextMarshaller<R extends Result> imp
 			throw new UnsupportedOperationException("Result not support by marshaller.");
 		}
 		this.doMarshal(result);
+		
+		this.getBeans().clear();
 	}
 	
 	protected abstract void doMarshal(R result);

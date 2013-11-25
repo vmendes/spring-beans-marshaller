@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd" xmlns="http://www.springframework.org/schema/beans">
+   <bean class="org.springframework.context.marshaller.TestBean">
+      <property name="testBoolean" value="true"/>
+      <property name="testByte" value="25"/>
+      <property name="testShort" value="77"/>
+      <property name="testInt" value="47"/>
+      <property name="testLong" value="688"/>
+      <property name="testFloat" value="6.9"/>
+      <property name="testDouble" value="4.2"/>
+      <property name="testString">String1</property>
+      <property name="testList">
+         <list>
+            <value>list1</value>
+         </list>
+      </property>
+      <property name="testSet">
+         <set>
+            <value>set1</value>
+         </set>
+      </property>
+      <property name="testMap">
+         <map>
+            <entry>
+               <key>Key1</key>
+               <value>Value1</value>
+            </entry>
+         </map>
+      </property>
+      <property name="testArray">
+         <array>
+            <value>array1</value>
+         </array>
+      </property>
+      <property name="testObject">
+         <bean class="org.springframework.context.marshaller.TestBean">
+            <property name="testBoolean" value="false"/>
+            <property name="testByte" value="0"/>
+            <property name="testShort" value="0"/>
+            <property name="testInt" value="0"/>
+            <property name="testLong" value="0"/>
+            <property name="testFloat" value="0.0"/>
+            <property name="testDouble" value="0.0"/>
+            <property name="testString">
+               <null/>
+            </property>
+            <property name="testDate">
+               <null/>
+            </property>
+            <property name="testList">
+               <null/>
+            </property>
+            <property name="testSet">
+               <null/>
+            </property>
+            <property name="testMap">
+               <null/>
+            </property>
+            <property name="testArray">
+               <null/>
+            </property>
+            <property name="testObject">
+               <null/>
+            </property>
+         </bean>
+      </property>
+   </bean>
+</beans>
