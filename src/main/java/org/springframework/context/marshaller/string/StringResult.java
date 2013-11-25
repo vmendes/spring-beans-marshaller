@@ -10,7 +10,7 @@ public class StringResult extends StreamResult {
 		super(new StringWriter());
 	}
 
-	public String getXml() {
+	public String getString() {
 		return ((StringWriter) getWriter()).getBuffer().toString();
 	}
 

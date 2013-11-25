@@ -43,7 +43,7 @@ public class TestMarshaller extends TestCase {
 		marshaller.addBean(bean);
 		marshaller.marshal(result);
 		
-		return result.getXml();
+		return result.getString();
 	}
 	
 }
