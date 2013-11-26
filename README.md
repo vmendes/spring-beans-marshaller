@@ -23,9 +23,32 @@ Generates the bean definition entries from runtime state of Java objects to Spri
 		marshaller.addBean(new MyOtherObject());
 		marshaller.marshal(result);
 		String context = result.getString();
+		
+### How to install:
 
+1. Add Maven repository:
 
-It does not contain any dependency to Spring Framework, so that you can generate namespace correctly by:
+		<repositories>
+			<repository>
+				<id>vmendes-snapshots</id>
+				<url>https://raw.github.com/vmendes/mvn-repo/snapshots</url>
+			</repository>
+			<repository>
+				<id>vmendes-releases</id>
+				<url>https://raw.github.com/vmendes/mvn-repo/releases</url>
+			</repository>
+		</repositories>
 
+2. Add Maven dependency:
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans-marshaller</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+
+Note 1: This project does not contain any dependency to Spring Framework, so it's unlikely you will come across major conflicts with your dependencies. Having said that you can generate namespace correctly by:	
+		
 		SpringBeansMarshaller.setSpringVersion("3.1");
 		
+Note 2: You may consider using the library temporally in your project. Once you generate all necessary artifacts for your application, you will be able to remove the dependency from your pom.xml. Another way to include the library is to keep the dependency through untracked configuration, like Eclipse Build Path.
