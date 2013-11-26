@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.springframework</groupId>
 	<artifactId>spring-beans-marshaller</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<build>
 		<plugins>
 			<plugin>
@@ -56,12 +56,12 @@
 		<repository>
 			<id>internal.repo</id>
 			<name>Staging Repository</name>
-			<url>scp://raw.github.com/vmendes/mvn-repo/master/releases/</url>
+			<url>git://raw.github.com/vmendes/mvn-repo/master/releases/</url>
 		</repository>
 		<snapshotRepository>
 			<id>internal.repo</id>
 			<name>Staging Repository</name>
-			<url>scp://raw.github.com/vmendes/mvn-repo/master/snapshots/</url>
+			<url>git://raw.github.com/vmendes/mvn-repo/master/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>
