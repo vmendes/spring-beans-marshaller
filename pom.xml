@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.springframework</groupId>
 	<artifactId>spring-beans-marshaller</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<build>
 		<plugins>
 			<plugin>
@@ -23,24 +23,33 @@
 					<autoVersionSubmodules>true</autoVersionSubmodules>
 				</configuration>
 			</plugin>
+			<plugin>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.1</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.wagon</groupId>
+						<artifactId>wagon-scm</artifactId>
+						<version>2.2</version>
+					</dependency>
+					<dependency>
+						<groupId>org.apache.maven.scm</groupId>
+						<artifactId>maven-scm-manager-plexus</artifactId>
+						<version>1.8</version>
+					</dependency>
+					<dependency>
+						<groupId>org.apache.maven.scm</groupId>
+						<artifactId>maven-scm-provider-gitexe</artifactId>
+						<version>1.8</version>
+					</dependency>
+					<dependency>
+						<groupId>org.apache.maven.scm</groupId>
+						<artifactId>maven-scm-api</artifactId>
+						<version>1.8</version>
+					</dependency>
+				</dependencies>
+			</plugin>
 		</plugins>
-		<extensions>
-			<extension>
-				<groupId>org.apache.maven.wagon</groupId>
-				<artifactId>wagon-scm</artifactId>
-				<version>2.5</version>
-			</extension>
-			<extension>
-				<groupId>org.apache.maven.scm</groupId>
-				<artifactId>maven-scm-manager-plexus</artifactId>
-				<version>1.8.1</version>
-			</extension>
-			<extension>
-				<groupId>org.apache.maven.scm</groupId>
-				<artifactId>maven-scm-provider-gitexe</artifactId>
-				<version>1.8.1</version>
-			</extension>
-		</extensions>
 	</build>
 	<dependencies>
 		<dependency>
@@ -71,7 +80,7 @@
 		<snapshotRepository>
 			<id>github</id>
 			<name>Staging Repository</name>
-			<url>scp://github.com/vmendes/vmendes/mvn-repo.git</url>
+			<url>scm:git:ssh://git@github.com/vmendes/mvn-repo.git</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>
