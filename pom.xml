@@ -49,12 +49,12 @@
 		<repository>
 			<id>internal.repo</id>
 			<name>Staging Repository</name>
-			<url>https://raw.github.com/vmendes/mvn-repo/releases/</url>
+			<url>git://raw.github.com/vmendes/mvn-repo/releases/</url>
 		</repository>
 		<snapshotRepository>
 			<id>internal.repo</id>
 			<name>Staging Repository</name>
-			<url>https://raw.github.com/vmendes/mvn-repo/snapshots/</url>
+			<url>git://raw.github.com/vmendes/mvn-repo/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>
