@@ -42,7 +42,7 @@
 	<scm>
 		<connection>scm:git:https://github.com/vmendes/spring-beans-marshaller.git</connection>
 		<url>https://github.com/vmendes/spring-beans-marshaller.git</url>
-		<developerConnection>scm:git:https://github.com:vmendes/spring-beans-marshaller.git</developerConnection>
+		<developerConnection>scm:git:git@github.com:vmendes/spring-beans-marshaller.git</developerConnection>
 	</scm>
 	
 	<distributionManagement>
