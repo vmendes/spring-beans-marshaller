@@ -15,6 +15,15 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.0</version>
+				<configuration>
+					<preparationGoals>clean verify install</preparationGoals>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 	<dependencies>
@@ -30,4 +39,17 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+	<distributionManagement>
+		<repository>
+			<id>internal.repo</id>
+			<name>Staging Repository</name>
+			<url>https://raw.github.com/vmendes/mvn-repo/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>internal.repo</id>
+			<name>Staging Repository</name>
+			<url>https://raw.github.com/vmendes/mvn-repo/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>
