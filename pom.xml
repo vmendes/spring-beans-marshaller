@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.springframework</groupId>
 	<artifactId>spring-beans-marshaller</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<build>
 		<plugins>
 			<plugin>
@@ -15,39 +15,36 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<version>2.0</version>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.7</version>
 				<configuration>
-					<preparationGoals>clean verify install</preparationGoals>
-					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<altDeploymentRepository>internal.repo::default::file://${built.repo.dir}</altDeploymentRepository>
 				</configuration>
 			</plugin>
 			<plugin>
-				<artifactId>maven-site-plugin</artifactId>
-				<version>3.1</version>
-				<dependencies>
-					<dependency>
-						<groupId>org.apache.maven.wagon</groupId>
-						<artifactId>wagon-scm</artifactId>
-						<version>2.2</version>
-					</dependency>
-					<dependency>
-						<groupId>org.apache.maven.scm</groupId>
-						<artifactId>maven-scm-manager-plexus</artifactId>
-						<version>1.8</version>
-					</dependency>
-					<dependency>
-						<groupId>org.apache.maven.scm</groupId>
-						<artifactId>maven-scm-provider-gitexe</artifactId>
-						<version>1.8</version>
-					</dependency>
-					<dependency>
-						<groupId>org.apache.maven.scm</groupId>
-						<artifactId>maven-scm-api</artifactId>
-						<version>1.8</version>
-					</dependency>
-				</dependencies>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.9</version>
+				<configuration>
+					<message>Maven artifacts for ${project.groupId}:${project.artifactId}:${project.version} ~${maven.build.timestamp}</message>
+					<noJekyll>true</noJekyll>
+					<outputDirectory>${built.repo.dir}</outputDirectory>
+					<includes><include>**/*</include></includes>
+					<repositoryName>mvn-repo</repositoryName>
+					<repositoryOwner>vmendes</repositoryOwner>
+					<branch>refs/heads/master</branch>
+					<path>releases</path>
+					<!--path>snapshots</path-->
+					<merge>true</merge>
+				</configuration>
+				<executions>
+				  <execution>
+					<goals>
+					  <goal>site</goal>
+					</goals>
+					<phase>deploy</phase>
+				  </execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
@@ -65,7 +62,7 @@
 		</dependency>
 	</dependencies>
 
-	<scm>
+	<!--scm>
 		<connection>scm:git:https://github.com/vmendes/spring-beans-marshaller.git</connection>
 		<url>https://github.com/vmendes/spring-beans-marshaller.git</url>
 		<developerConnection>scm:git:git@github.com:vmendes/spring-beans-marshaller.git</developerConnection>
@@ -82,5 +79,10 @@
 			<name>Staging Repository</name>
 			<url>scm:git:ssh://git@github.com/vmendes/mvn-repo.git</url>
 		</snapshotRepository>
-	</distributionManagement>
+	</distributionManagement-->
+	
+	<properties>
+		<github.global.server>github</github.global.server>
+		<built.repo.dir>${project.build.directory}/repo</built.repo.dir>
+	</properties>
 </project>
